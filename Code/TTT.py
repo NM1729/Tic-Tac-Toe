@@ -98,7 +98,6 @@ def main():
     #if no winner switch player
     #repeat above steps
     #if winner congratulate the winner
-    introduce_game()
     player, computer = choose_players()
     turn = X
     board = initialise_board()
@@ -122,7 +121,16 @@ def main():
 
 import random
 
-main()
+introduce_game()
+rematch=1
+while rematch==1:
+    main()
+    choices2 = input("Rematch?").lower()
+    rematch=0
+    while choices2 not in ("yes","no","y","n"):
+        choices2=input("I'm sorry, I don't understand you. Rematch?").lower()
+    if(choices2=="yes" or choices2=="y"):
+        rematch=1
 
-print("\n\nPress the enter key to continue.\n");
+input("\n\nPress the enter key to continue.\n");
         
